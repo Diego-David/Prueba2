@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Empleado
+from .models import Empleado, Habilidades
 # Register your models here.
 
-#admin.site.register(Habilidades)
+admin.site.register(Habilidades)
 
 class EmpleadoAdmin(admin.ModelAdmin):
     list_display = (
@@ -10,6 +10,7 @@ class EmpleadoAdmin(admin.ModelAdmin):
         'first_name',
         'last_name',
         'departamento',
+        'job',
         'full_name',
     )
 
@@ -19,10 +20,10 @@ class EmpleadoAdmin(admin.ModelAdmin):
         return obj.first_name + ' ' +  obj.last_name
 
     search_fields = ('first_name',)
-    list_filter = ('departamento', )
+    list_filter = ('departamento', 'job', 'habilidades', )
 
     #
-    #filter_horizontal = ('habilidades',)  #SOLO FUNCIONA CON LA RELACIÓN m-m
+    filter_horizontal = ('habilidades',)  #SOLO FUNCIONA CON LA RELACIÓN m-m
 
 
 

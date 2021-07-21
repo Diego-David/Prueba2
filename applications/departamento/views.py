@@ -33,7 +33,7 @@ class NewDepartamentoView(FormView):
         Empleado.objects.create(
             first_name = nombre,
             last_name = apellido,
-            #job = '1',
+            job = '1',
             departamento = depa
 
 
