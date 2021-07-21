@@ -34,7 +34,6 @@ class Empleado(models.Model):
         ('1', 'SISTEMAS DE INFORMACIÓN'),
         ('2', 'INDUSTRIAL'),
         ('3', 'ELECTROMECÁNICA'),
-        ('4', 'HIDRÁULICA'),
     )
 
     first_name = models.CharField('Nombre', max_length=60)
