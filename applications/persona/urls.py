@@ -11,7 +11,7 @@ urlpatterns = [
     path('listar_empleados_admin/', views.ListaEmpleadosAdmin.as_view(), name="empleados_admin"), 
 
     path('kword_empleados/', views.ListEmpleadosByKword.as_view()),
-    path('listar_habilidades_empleados/', views.ListHabilidadesEmpleados.as_view()),
+    #path('listar_habilidades_empleados/', views.ListHabilidadesEmpleados.as_view()),
     path('detail_empleados/<pk>/', views.EmpleadoDetailView.as_view(), name="empleado_detail"),
     path('createview_empleados/', views.EmpleadoCreateView.as_view(), name="create_empleado"),
     path('succes/', views.SuccesView.as_view(), name='correcto'),

@@ -7,6 +7,7 @@ from applications.departamento.models import Departamento
 # Create your models here.
 
 
+"""
 
 class Habilidades(models.Model):
     habilidad = models.CharField('Habilidad', max_length=50)
@@ -17,6 +18,8 @@ class Habilidades(models.Model):
 
     def __str__(self):
         return str(self.id) + '-' + self.habilidad
+
+"""
 
 """
 Contador
@@ -36,10 +39,10 @@ class Empleado(models.Model):
 
     first_name = models.CharField('Nombre', max_length=60)
     last_name = models.CharField('Apellidos', max_length=60)
-    job = models.CharField('Trabajo', max_length=1, choices=JOB_CHOICES)
+    #job = models.CharField('Trabajo', max_length=1, choices=JOB_CHOICES, null=True)
     departamento = models.ForeignKey(Departamento, on_delete=models.CASCADE) # djanerio=> fk =>relación 1-M
     avatar = models.ImageField(upload_to='empleado', blank=True, null=True)
-    habilidades = models.ManyToManyField(Habilidades)       #relación M-M // djaneiro=>m2m
+    #habilidades = models.ManyToManyField(Habilidades, null=True)       #relación M-M // djaneiro=>m2m
     # PARAEL EJEMPLO DE CKEditor
     # hoja_vida = RichTextField()
     

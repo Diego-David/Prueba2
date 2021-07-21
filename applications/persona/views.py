@@ -20,7 +20,7 @@ from .models import Empleado
 """
 
 # Importamos los modelos con los que vamos a trabajar 
-from .models import Empleado, Habilidades
+from .models import Empleado
 
 class InicioView(TemplateView):
     """ vista de la pag de INICIO """
@@ -98,15 +98,17 @@ class ListEmpleadosByKword(ListView):
 """
 # 4.- QUEREMOS LISTAR las HABILIDADES
 """
+
+"""
 class ListHabilidadesEmpleados(ListView):
     template_name = 'persona/habilidades.html'
     context_object_name = 'habilidades_object'
-    """
+    
     def get_queryset(self):
         empleado = Empleado.objects.get(id=1)
         #print(empleado.habilidades.all())
         return empleado.habilidades.all()
-    """
+    
     def get_queryset(self):
         print("==============++++++++++++++")
         clave_habilidad = self.request.GET.get("habilidad", '')
@@ -115,7 +117,7 @@ class ListHabilidadesEmpleados(ListView):
         )
         print ("=======================================================", type (id))
         return list_habilidad
-       
+"""       
 
 class EmpleadoDetailView(DetailView):
     model = Empleado
@@ -147,9 +149,9 @@ class EmpleadoUpdateView(UpdateView):
     template_name = "persona/persona_update.html"
     fields = ['first_name',
         'last_name',
-        'job', 
+        #'job', 
         'departamento',
-        'habilidades'
+        #'habilidades'
     ]
     success_url = reverse_lazy('persona_app:empleados_admin')
 

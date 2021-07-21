@@ -12,11 +12,11 @@ class EmpleadoForm(forms.ModelForm):
         fields = (
             'first_name',
             'last_name',
-            'job',
+            #'job',
             'departamento',
             'avatar',
-            'habilidades',
+            #'habilidades',
         )
         widgets ={
-            'habilidades': forms.CheckboxSelectMultiple()
+            #'habilidades': forms.CheckboxSelectMultiple()
         }
