@@ -30,10 +30,11 @@ Otro
 class Empleado(models.Model):
 
     JOB_CHOICES =(
-        ('0', 'CONTADOR'),
-        ('1', 'ADMINISTRADOR'),
-        ('2', 'ECONOMISTA'),
-        ('3', 'OTRO'),
+        ('0', 'ELECTRICIDAD'),
+        ('1', 'SISTEMAS DE INFORMACIÓN'),
+        ('2', 'INDUSTRIAL'),
+        ('3', 'ELECTROMECÁNICA'),
+        ('4', 'HIDRÁULICA'),
     )
 
     first_name = models.CharField('Nombre', max_length=60)
